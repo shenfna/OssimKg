@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mappings>
+    <mapping>
+        <name>MAP_HOST</name>
+        <columns>
+            <column>id</column>
+            <column>hostname</column>
+            <column>asset</column>
+            <column>descr</column>
+            <column>created</column>
+            <column>updated</column>
+        </columns>
+        <source>select hex(id) as id, hostname, asset, descr, created, updated from host;</source>
+    </mapping>
+    <mapping>
+        <name>MAP_HOST_GROUP</name>
+        <columns>
+            <column>id</column>
+            <column>name</column>
+            <column>descr</column>
+            <column>owner</column>
+        </columns>
+        <source>select hex(id) as id, name, descr, owner from host_group;</source>
+    </mapping>
+    <mapping>
+        <name>MAP_HOST_GROUP_REF</name>
+        <columns>
+            <column>host_group_id</column>
+            <column>host_id</column>
+        </columns>
+        <source>select hex(host_group_id) as host_group_id, hex(host_id) as host_id from host_group_reference;</source>
+    </mapping>
+    <mapping>
+        <name>MAP_HOST_IP</name>
+        <columns>
+            <column>host_id</column>
+            <column>ip</column>
+        </columns>
+        <source>select hex(host_id) as host_id, inet6_ntoa(ip) as ip from host_ip;</source>
+    </mapping>
+    <mapping>
+        <name>MAP_HOST_OS</name>
+        <columns>
+            <column>host_id</column>
+            <column>value</column>
+            <column>source_id</column>
+        </columns>
+        <source>select hex(host_id) as host_id, value, source_id  from host_properties where property_ref=3;</source>
+    </mapping>
+    <mapping>
+        <name>MAP_HOST_SERVICE</name>
+        <columns>
+            <column>host_id</column>
+            <column>host_ip</column>
+            <column>port</column>
+            <column>service</column>
+            <column>version</column>
+            <column>source_id</column>
+        </columns>
+        <source>select hex(host_id) as host_id, inet6_ntoa(host_ip) as host_ip, port, service, version,source_id from host_services;</source>
+    </mapping>
+    <mapping>
+        <name>MAP_HOST_SOURCE</name>
+        <columns>
+            <column>id</column>
+            <column>name</column>
+        </columns>
+        <source>select id, name from host_source_reference;</source>
+    </mapping>
+    <mapping>
+        <name>MAP_HOST_TYPE</name>
+        <columns>
+            <column>host_id</column>
+            <column>name</column>
+        </columns>
+        <source>select hex(host_id) as host_id, name from host_types left join device_types on host_types.type=device_types.id;</source>
+    </mapping>
+    <mapping>
+        <name>MAP_HOST_SUBTYPE</name>
+        <columns>
+            <column>host_id</column>
+            <column>name</column>
+        </columns>
+        <source>select hex(host_id) as host_id, name from host_types left join device_types on host_types.subtype=device_types.id;</source>
+    </mapping>
+    <mapping>
+        <name>MAP_HOST_SOFTWARE</name>
+        <columns>
+            <column>host_id</column>
+            <column>cpe</column>
+            <column>banner</column>
+            <column>source_id</column>
+        </columns>
+        <source>select hex(host_id) as host_id, cpe, banner, source_id from host_software;</source>
+    </mapping>
+</mappings>

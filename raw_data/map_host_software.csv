@@ -1,0 +1,303 @@
+host_id,cpe,banner,source_id
+2985CF79292311EAA9F2000C34DB095E,cpe:/a:apache:http_server,Apache httpd,5
+2985CF79292311EAA9F2000C34DB095E,cpe:/a:mysql:mysql:5.6.36-82.1-log,MySQL 5.6.36-82.1-log,5
+2985CF79292311EAA9F2000C34DB095E,cpe:/a:openbsd:openssh:6.7p1,OpenSSH 6.7p1 protocol 2.0,5
+2985CF79292311EAA9F2000C34DB095E,cpe:/o:linux:linux_kernel:3,Linux Linux_kernel 3,5
+2985CF79292311EAA9F2000C396F43F4,cpe:/a:microsoft:ftp_service,Microsoft ftpd,5
+2985CF79292311EAA9F2000C396F43F4,cpe:/a:microsoft:iis:7.5,Microsoft IIS httpd 7.5,5
+2985CF79292311EAA9F2000C396F43F4,cpe:/o:microsoft:windows_7::-,Microsoft Windows_7 -,5
+2985CF79292311EAA9F2000C396F43F4,cpe:/o:microsoft:windows_7::sp1,Microsoft Windows_7 Sp1,5
+2985CF79292311EAA9F2000C3E03645E,cpe:/o:linux:linux_kernel:2.6,Linux Linux_kernel 2.6,5
+2985CF79292311EAA9F2000C472D6E58,cpe:/o:microsoft:windows,Windows 7 Ultimate 7600 microsoft-ds workgroup: WORKGROUP,5
+2985CF79292311EAA9F2000C472D6E58,cpe:/o:microsoft:windows_vista,Microsoft Windows_vista,5
+2985CF79292311EAA9F2000C47373032,cpe:/o:microsoft:windows_7::-,Microsoft Windows_7 -,5
+2985CF79292311EAA9F2000C47373032,cpe:/o:microsoft:windows_7::sp1,Microsoft Windows_7 Sp1,5
+2985CF79292311EAA9F2000C47373032,cpe:/o:microsoft:windows_server_2008::sp2,Microsoft Windows_server_2008 Sp2,5
+2985CF79292311EAA9F2000C4739484A,cpe:/a:mongodb:mongodb:3.4.15,MongoDB 3.4.15,5
+2985CF79292311EAA9F2000C4739484A,cpe:/o:microsoft:windows,Microsoft Windows netbios-ssn,5
+2985CF79292311EAA9F2000C4739484A,cpe:/o:microsoft:windows_10,Microsoft Windows_10,5
+2985CF79292311EAA9F2000CA92A6D68,cpe:/o:microsoft:windows_7::-,Microsoft Windows_7 -,5
+2985CF79292311EAA9F2000CA92A6D68,cpe:/o:microsoft:windows_7::sp1,Microsoft Windows_7 Sp1,5
+2985CF79292311EAA9F2000CA974B9AE,cpe:/a:apache:http_server:2.2.4,Apache httpd 2.2.4 (Win32) PHP/5.2.6,5
+2985CF79292311EAA9F2000CA974B9AE,cpe:/a:mysql:mysql,MySQL unauthorized,5
+2985CF79292311EAA9F2000CA974B9AE,cpe:/a:serv-u:serv-u:6.4,Serv-U ftpd 6.4,5
+2985CF79292311EAA9F2000CA974B9AE,cpe:/o:microsoft:windows_server_2003,Microsoft Windows_server_2003,5
+2985CF79292311EAA9F2000CA974B9AE,cpe:/o:microsoft:windows_xp::sp2,Microsoft Windows_xp Sp2,5
+2985CF79292311EAA9F2000CA976CF46,cpe:/a:serv-u:serv-u:6.4,Serv-U ftpd 6.4,5
+2985CF79292311EAA9F2000CA976CF46,cpe:/o:microsoft:windows_xp,Microsoft Windows_xp,5
+2985CF79292311EAA9F2000CA976CF46,cpe:/o:microsoft:windows_xp::sp3,Microsoft Windows_xp Sp3,5
+2985CF79292311EAA9F2000CA97897B8,cpe:/o:microsoft:windows,Windows 7 Enterprise 7601 Service Pack 1 microsoft-ds workgroup: WORKGROUP,5
+2985CF79292311EAA9F2000CA97A8E60,cpe:/a:mysql:mysql,MySQL unauthorized,5
+2985CF79292311EAA9F2000CA97A8E60,cpe:/o:microsoft:windows,Microsoft Windows netbios-ssn,5
+2985CF79292311EAA9F2000CA97A8E60,cpe:/o:microsoft:windows_vista,Microsoft Windows_vista,5
+2985CF79292311EAA9F2000CA97C7536,cpe:/o:microsoft:windows,Microsoft Windows netbios-ssn,5
+2985CF79292411EAA9F2000C17ECC7AA,cpe:/a:openbsd:openssh:5.2,OpenSSH 5.2 protocol 2.0,5
+2985CF79292411EAA9F2000C17ECC7AA,cpe:/a:vsftpd:vsftpd:2.0.1,vsftpd 2.0.1,5
+2985CF79292411EAA9F2000C17ECC7AA,cpe:/o:linux:linux_kernel:2.6,Linux Linux_kernel 2.6,5
+2985CF79292411EAA9F2000C17F1287C,cpe:/a:serv-u:serv-u:14.0,Serv-U ftpd 14.0,5
+2985CF79292411EAA9F2000C17F1287C,cpe:/a:serv-u:serv-u:14.0.0.6,Serv-U SSH Server 14.0.0.6 protocol 2.0,5
+2985CF79292411EAA9F2000C17F1287C,cpe:/o:ipxe:ipxe:1.0.0%2b,Ipxe Ipxe 1.0.0%2b,5
+2985CF79292411EAA9F2000C17F1287C,cpe:/o:microsoft:windows_xp::sp2,Microsoft Windows_xp Sp2,5
+2985CF79292411EAA9F2000C17F1287C,cpe:/o:microsoft:windows_xp::sp3,Microsoft Windows_xp Sp3,5
+2985CF79292411EAA9F2000C17F3B16E,cpe:/o:microsoft:windows_server_2012:r2,Microsoft Windows_server_2012 R2,5
+2985CF79292411EAA9F2000C17F3B16E,cpe:/o:microsoft:windows_vista::sp1:home_premium,Microsoft Windows_vista Sp1 Home_premium,5
+2985CF79292411EAA9F2000C17F61666,cpe:/a:openbsd:openssh:5.1,OpenSSH 5.1 protocol 2.0,5
+2985CF79292411EAA9F2000C17F61666,cpe:/o:linux:linux_kernel:2.6,Linux Linux_kernel 2.6,5
+2985CF79292411EAA9F2000C17F92C0C,cpe:/a:openbsd:openssh:5.2,OpenSSH 5.2 protocol 2.0,5
+2985CF79292411EAA9F2000C17F92C0C,cpe:/o:linux:linux_kernel:2.6,Linux Linux_kernel 2.6,5
+2985CF79292411EAA9F2000C1AAD23FE,cpe:/o:ipxe:ipxe:1.0.0%2b,Ipxe Ipxe 1.0.0%2b,5
+2985CF79292411EAA9F2000C67E49030,cpe:/a:mysql:mysql,MySQL unauthorized,5
+2985CF79292411EAA9F2000C67E49030,cpe:/o:microsoft:windows_7::-,Microsoft Windows_7 -,5
+2985CF79292411EAA9F2000C67E49030,cpe:/o:microsoft:windows_7::sp1,Microsoft Windows_7 Sp1,5
+2985CF79292411EAA9F2000C67E49030,cpe:/o:microsoft:windows_server_2008::sp2,Microsoft Windows_server_2008 Sp2,5
+2985CF79292411EAA9F2000CB353C00E,cpe:/a:goahead:goahead_webserver,GoAhead WebServer,5
+2985CF79292411EAA9F2000CB353C00E,cpe:/a:thekelleys:dnsmasq:2.40,dnsmasq 2.40,5
+2985CF79292411EAA9F2000CB353C00E,cpe:/o:linux:linux_kernel:2.6,Linux Linux_kernel 2.6,5
+2985CF79292411EAA9F2000CB363C6B6,cpe:/o:microsoft:windows_server_2008::sp1,Microsoft Windows_server_2008 Sp1,5
+2985CF79292411EAA9F2000CB363C6B6,cpe:/o:microsoft:windows_server_2008:r2,Microsoft Windows_server_2008 R2,5
+2985CF79292411EAA9F2000CB363C6B6,cpe:/o:microsoft:windows_xp::sp2,Microsoft Windows_xp Sp2,5
+2985CF79292411EAA9F2000CB367BFC8,cpe:/a:openbsd:openssh:5.5,OpenSSH 5.5 protocol 2.0,5
+2985CF79292411EAA9F2000CB367BFC8,cpe:/o:linux:linux_kernel:2.6,Linux Linux_kernel 2.6,5
+2985CF79292411EAA9F2000CB36C1794,cpe:/a:openbsd:openssh:6.6.1,OpenSSH 6.6.1 protocol 2.0,5
+2985CF79292411EAA9F2000CB36C1794,cpe:/o:linux:linux_kernel:2.6,Linux Linux_kernel 2.6,5
+2985CF79292411EAA9F2000CB3740D8C,cpe:/a:apache:coyote_http_connector:1.1,Apache Tomcat/Coyote JSP engine 1.1,5
+2985CF79292411EAA9F2000CB3740D8C,cpe:/a:openbsd:openssh:5.2,OpenSSH 5.2 protocol 2.0,5
+2985CF79292411EAA9F2000CB3740D8C,cpe:/a:vsftpd:vsftpd:2.0.1,vsftpd 2.0.1,5
+2985CF79292411EAA9F2000CB3740D8C,cpe:/o:linux:linux_kernel:2.6.32,Linux Linux_kernel 2.6.32,5
+2985CF79292411EAA9F2000CB376EF84,cpe:/a:microsoft:iis:10.0,Microsoft IIS httpd 10.0,5
+2985CF79292411EAA9F2000CB376EF84,cpe:/o:microsoft:windows,Microsoft IIS httpd 10.0,5
+2985CF79292411EAA9F2000CB37AAB92,cpe:/a:openbsd:openssh:7.4,OpenSSH 7.4 protocol 2.0,5
+2985CF79292411EAA9F2000CB37AAB92,cpe:/o:linux:linux_kernel:3,Linux Linux_kernel 3,5
+2985CF79292411EAA9F2000CB37D5CCA,cpe:/a:greenbone:greenbone_security_assistant,Greenbone Security Assistant,5
+2985CF79292411EAA9F2000CB37D5CCA,cpe:/a:openbsd:openssh:7.4,OpenSSH 7.4 protocol 2.0,5
+2985CF79292411EAA9F2000CB37D5CCA,cpe:/o:linux:linux_kernel:3,Linux Linux_kernel 3,5
+2985CF79292411EAA9F2000CB380C8A6,cpe:/a:openbsd:openssh:6.1,OpenSSH 6.1 protocol 2.0,5
+2985CF79292411EAA9F2000CB380C8A6,cpe:/o:linux:linux_kernel:2.6,Linux Linux_kernel 2.6,5
+2985CF79292411EAA9F2000CB388FA26,cpe:/o:microsoft:windows_10,Microsoft Windows_10,5
+2985CF79292411EAA9F2000CB38C4550,cpe:/a:openbsd:openssh:7.4,OpenSSH 7.4 protocol 2.0,5
+2985CF79292411EAA9F2000CB38C4550,cpe:/o:linux:linux_kernel:3,Linux Linux_kernel 3,5
+2985CF79292411EAA9F2000CB390EA06,cpe:/a:openbsd:openssh:6.6.1,OpenSSH 6.6.1 protocol 2.0,5
+2985CF79292411EAA9F2000CB390EA06,cpe:/o:linux:linux_kernel:3,Linux Linux_kernel 3,5
+2985CF79292411EAA9F2000CB3950898,cpe:/a:openbsd:openssh:6.6.1,OpenSSH 6.6.1 protocol 2.0,5
+2985CF79292411EAA9F2000CB3950898,cpe:/o:linux:linux_kernel:3,Linux Linux_kernel 3,5
+2985CF79292411EAA9F2000CB398404E,cpe:/a:openbsd:openssh:3.9p1,OpenSSH 3.9p1 protocol 1.99,5
+2985CF79292411EAA9F2000CB398404E,cpe:/o:linux:linux_kernel:2.6,Linux Linux_kernel 2.6,5
+2985CF79292411EAA9F2000CB3A13622,cpe:/a:openbsd:openssh:5.3,OpenSSH 5.3 protocol 2.0,5
+2985CF79292411EAA9F2000CB3A13622,cpe:/o:linux:linux_kernel:2.6,Linux Linux_kernel 2.6,5
+2985CF79292411EAA9F2000CB3A41E00,cpe:/a:apache:http_server:2.4.6,Apache httpd 2.4.6 (CentOS),5
+2985CF79292411EAA9F2000CB3A41E00,cpe:/a:openbsd:openssh:6.6.1,OpenSSH 6.6.1 protocol 2.0,5
+2985CF79292411EAA9F2000CB3A41E00,cpe:/o:linux:linux_kernel:3,Linux Linux_kernel 3,5
+2985CF79292411EAA9F2000CB3ACD856,cpe:/a:openbsd:openssh:6.6.1,OpenSSH 6.6.1 protocol 2.0,5
+2985CF79292411EAA9F2000CB3ACD856,cpe:/a:vsftpd:vsftpd:3.0.2,vsftpd 3.0.2,5
+2985CF79292411EAA9F2000CB3ACD856,cpe:/o:linux:linux_kernel:3,Linux Linux_kernel 3,5
+2985CF79292411EAA9F2000CB3B0E248,cpe:/a:openbsd:openssh:8.1,OpenSSH 8.1 protocol 2.0,5
+2985CF79292411EAA9F2000CB3B0E248,cpe:/o:linux:linux_kernel:3,Linux Linux_kernel 3,5
+2985CF79292411EAA9F2000CB3B5D406,cpe:/o:microsoft:windows,Microsoft Terminal Service,5
+2985CF79292411EAA9F2000CB3B5D406,cpe:/o:microsoft:windows_vista,Microsoft Windows_vista,5
+2985CF79292411EAA9F2000CB3B8942A,cpe:/o:microsoft:windows_server_2008::sp1,Microsoft Windows_server_2008 Sp1,5
+2985CF79292411EAA9F2000CB3B8942A,cpe:/o:microsoft:windows_server_2008:r2,Microsoft Windows_server_2008 R2,5
+2985CF79292411EAA9F2000CB3B8942A,cpe:/o:microsoft:windows_xp::sp2,Microsoft Windows_xp Sp2,5
+2985CF79292411EAA9F2000CB3BBB83A,cpe:/a:apache:coyote_http_connector:1.1,Apache Tomcat/Coyote JSP engine 1.1,5
+2985CF79292411EAA9F2000CB3BBB83A,cpe:/o:microsoft:windows_xp::sp2,Microsoft Windows_xp Sp2,5
+2985CF79292411EAA9F2000CB3BFF986,cpe:/o:microsoft:windows_10,Microsoft Windows_10,5
+2985CF79292411EAA9F2000CB3C49784,cpe:/a:microsoft:ftp_service,Microsoft ftpd,5
+2985CF79292411EAA9F2000CB3C49784,cpe:/a:microsoft:iis:10.0,Microsoft IIS httpd 10.0,5
+2985CF79292411EAA9F2000CB3C49784,cpe:/o:microsoft:windows,Microsoft Windows,5
+2985CF79292411EAA9F2000CB3C49784,cpe:/o:microsoft:windows_vista,Microsoft Windows_vista,5
+2985CF79292411EAA9F2000CB3C7B2B6,cpe:/a:microsoft:iis:10.0,Microsoft IIS httpd 10.0,5
+2985CF79292411EAA9F2000CB3C7B2B6,cpe:/a:mysql:mysql:5.5.15,MySQL 5.5.15,5
+2985CF79292411EAA9F2000CB3C7B2B6,cpe:/o:microsoft:windows,Microsoft Windows,5
+2985CF79292411EAA9F2000CB3C7B2B6,cpe:/o:microsoft:windows_10,Microsoft Windows_10,5
+2985CF79292411EAA9F2000CB3CCB860,cpe:/a:apache:coyote_http_connector:1.1,Apache Tomcat/Coyote JSP engine 1.1,5
+2985CF79292411EAA9F2000CB3CCB860,cpe:/a:openbsd:openssh:5.2,OpenSSH 5.2 protocol 2.0,5
+2985CF79292411EAA9F2000CB3CCB860,cpe:/o:linux:linux_kernel:2.6,Linux Linux_kernel 2.6,5
+2985CF79292411EAA9F2000CB3D1F500,cpe:/a:apache:coyote_http_connector:1.1,Apache Tomcat/Coyote JSP engine 1.1,5
+2985CF79292411EAA9F2000CB3D1F500,cpe:/a:openbsd:openssh:5.2,OpenSSH 5.2 protocol 2.0,5
+2985CF79292411EAA9F2000CB3D1F500,cpe:/a:vsftpd:vsftpd:2.0.1,vsftpd 2.0.1,5
+2985CF79292411EAA9F2000CB3D1F500,cpe:/o:linux:linux_kernel:2.6,Linux Linux_kernel 2.6,5
+2985CF79292411EAA9F2000CB3D4A5A2,cpe:/a:apache:coyote_http_connector:1.1,Apache Tomcat/Coyote JSP engine 1.1,5
+2985CF79292411EAA9F2000CB3D4A5A2,cpe:/a:openbsd:openssh:5.2,OpenSSH 5.2 protocol 2.0,5
+2985CF79292411EAA9F2000CB3D4A5A2,cpe:/a:vsftpd:vsftpd:2.0.1,vsftpd 2.0.1,5
+2985CF79292411EAA9F2000CB3D4A5A2,cpe:/o:linux:linux_kernel:2.6,Linux Linux_kernel 2.6,5
+2985CF79292411EAA9F2000CB3D4A5A2,cpe:/o:linux:linux_kernel:3,Linux Linux_kernel 3,5
+2985CF79292411EAA9F2000CB3D768A0,cpe:/a:genivia:gsoap:2.7,gSOAP 2.7,5
+2985CF79292411EAA9F2000CB3D768A0,cpe:/o:windriver:vxworks,Windriver Vxworks,5
+2985CF79292411EAA9F2000CB3D9792E,cpe:/a:openbsd:openssh:6.6.1,OpenSSH 6.6.1 protocol 2.0,5
+2985CF79292411EAA9F2000CB3D9792E,cpe:/o:linux:linux_kernel:2.6,Linux Linux_kernel 2.6,5
+2985CF79292411EAA9F2000CB3DBDE4E,cpe:/a:openbsd:openssh:7.6p1,OpenSSH 7.6p1 Ubuntu 4ubuntu0.3 Ubuntu Linux; protocol 2.0,5
+2985CF79292411EAA9F2000CB3DBDE4E,cpe:/o:linux:linux_kernel:2.6.32,Linux Linux_kernel 2.6.32,5
+2985CF79292411EAA9F2000CB3E1A126,cpe:/a:igor_sysoev:nginx,nginx,5
+2985CF79292411EAA9F2000CB3E1A126,cpe:/o:linux:linux_kernel:3,Linux Linux_kernel 3,5
+2985CF79292411EAA9F2000CB3EE14F6,cpe:/a:openbsd:openssh:6.6.1,OpenSSH 6.6.1 protocol 2.0,5
+2985CF79292411EAA9F2000CB3EE14F6,cpe:/o:linux:linux_kernel:2.6,Linux Linux_kernel 2.6,5
+2985CF79292411EAA9F2000CB3EE14F6,cpe:/o:linux:linux_kernel:3.10,Linux Linux_kernel 3.10,5
+2985CF79292411EAA9F2000CB3F0A57C,cpe:/a:apache:coyote_http_connector:1.1,Apache Tomcat/Coyote JSP engine 1.1,5
+2985CF79292411EAA9F2000CB3F0A57C,cpe:/a:openbsd:openssh:5.2,OpenSSH 5.2 protocol 2.0,5
+2985CF79292411EAA9F2000CB3F0A57C,cpe:/a:vsftpd:vsftpd:2.0.1,vsftpd 2.0.1,5
+2985CF79292411EAA9F2000CB3F0A57C,cpe:/o:linux:linux_kernel:2.6,Linux Linux_kernel 2.6,5
+2985CF79292411EAA9F2000CB3F0A57C,cpe:/o:linux:linux_kernel:3,Linux Linux_kernel 3,5
+2985CF79292411EAA9F2000CB3F36F0A,cpe:/a:openbsd:openssh:7.9,OpenSSH 7.9 protocol 2.0,5
+2985CF79292411EAA9F2000CB3F36F0A,cpe:/o:linux:linux_kernel:2.6,Linux Linux_kernel 2.6,5
+2985CF79292411EAA9F2000CB3F7EAE4,cpe:/a:lighttpd:lighttpd:1.4.42,lighttpd 1.4.42,5
+2985CF79292411EAA9F2000CB3F7EAE4,cpe:/o:linux:linux_kernel:3.18,Linux Linux_kernel 3.18,5
+2985CF79292411EAA9F2000CB3FC9850,cpe:/a:apache:coyote_http_connector:1.1,Apache Tomcat/Coyote JSP engine 1.1,5
+2985CF79292411EAA9F2000CB3FC9850,cpe:/a:openbsd:openssh:5.2,OpenSSH 5.2 protocol 2.0,5
+2985CF79292411EAA9F2000CB3FC9850,cpe:/o:linux:linux_kernel:2.6,Linux Linux_kernel 2.6,5
+2985CF79292411EAA9F2000CB400284E,cpe:/a:apache:coyote_http_connector:1.1,Apache Tomcat/Coyote JSP engine 1.1,5
+2985CF79292411EAA9F2000CB400284E,cpe:/a:openbsd:openssh:5.2,OpenSSH 5.2 protocol 2.0,5
+2985CF79292411EAA9F2000CB400284E,cpe:/a:vsftpd:vsftpd:2.0.1,vsftpd 2.0.1,5
+2985CF79292411EAA9F2000CB400284E,cpe:/o:linux:linux_kernel:2.6.32,Linux Linux_kernel 2.6.32,5
+2985CF79292411EAA9F2000CB4030ECE,cpe:/a:matt_johnston:dropbear_ssh_server:2011.54,Dropbear sshd 2011.54 protocol 2.0,5
+2985CF79292411EAA9F2000CB4030ECE,cpe:/o:linux:linux_kernel:2.6,Linux Linux_kernel 2.6,5
+2985CF79292411EAA9F2000CB4067FC8,cpe:/a:openbsd:openssh:6.6.1,OpenSSH 6.6.1 protocol 2.0,5
+2985CF79292411EAA9F2000CB4067FC8,cpe:/o:linux:linux_kernel:2.6,Linux Linux_kernel 2.6,5
+2985CF79292411EAA9F2000CB4067FC8,cpe:/o:linux:linux_kernel:3.10,Linux Linux_kernel 3.10,5
+2985CF79292411EAA9F2000CB409E866,cpe:/a:apache:coyote_http_connector:1.1,Apache Tomcat/Coyote JSP engine 1.1,5
+2985CF79292411EAA9F2000CB409E866,cpe:/a:openbsd:openssh:5.2,OpenSSH 5.2 protocol 2.0,5
+2985CF79292411EAA9F2000CB409E866,cpe:/a:vsftpd:vsftpd:2.0.1,vsftpd 2.0.1,5
+2985CF79292411EAA9F2000CB409E866,cpe:/o:linux:linux_kernel:2.6,Linux Linux_kernel 2.6,5
+2985CF79292411EAA9F2000CB409E866,cpe:/o:linux:linux_kernel:3,Linux Linux_kernel 3,5
+2985CF79292411EAA9F2000CB40C69C4,cpe:/a:openbsd:openssh:6.6.1,OpenSSH 6.6.1 protocol 2.0,5
+2985CF79292411EAA9F2000CB40C69C4,cpe:/o:linux:linux_kernel:2.6,Linux Linux_kernel 2.6,5
+2985CF79292411EAA9F2000CB40ED8BC,cpe:/a:apache:coyote_http_connector:1.1,Apache Tomcat/Coyote JSP engine 1.1,5
+2985CF79292411EAA9F2000CB40ED8BC,cpe:/a:openbsd:openssh:5.2,OpenSSH 5.2 protocol 2.0,5
+2985CF79292411EAA9F2000CB40ED8BC,cpe:/a:vsftpd:vsftpd:2.0.1,vsftpd 2.0.1,5
+2985CF79292411EAA9F2000CB40ED8BC,cpe:/o:linux:linux_kernel:2.6,Linux Linux_kernel 2.6,5
+2985CF79292411EAA9F2000CB40ED8BC,cpe:/o:linux:linux_kernel:3,Linux Linux_kernel 3,5
+2985CF79292411EAA9F2000CB4115164,cpe:/a:openbsd:openssh:7.4,OpenSSH 7.4 protocol 2.0,5
+2985CF79292411EAA9F2000CB4115164,cpe:/o:linux:linux_kernel:3,Linux Linux_kernel 3,5
+2985CF79292411EAA9F2000CB4170A5A,cpe:/a:apache:coyote_http_connector:1.1,Apache Tomcat/Coyote JSP engine 1.1,5
+2985CF79292411EAA9F2000CB4170A5A,cpe:/a:openbsd:openssh:5.2,OpenSSH 5.2 protocol 2.0,5
+2985CF79292411EAA9F2000CB4170A5A,cpe:/a:vsftpd:vsftpd:2.0.1,vsftpd 2.0.1,5
+2985CF79292411EAA9F2000CB4170A5A,cpe:/o:linux:linux_kernel:2.6,Linux Linux_kernel 2.6,5
+2985CF79292411EAA9F2000CB41A3810,cpe:/a:apache:coyote_http_connector:1.1,Apache Tomcat/Coyote JSP engine 1.1,5
+2985CF79292411EAA9F2000CB41A3810,cpe:/a:openbsd:openssh:5.2,OpenSSH 5.2 protocol 2.0,5
+2985CF79292411EAA9F2000CB41A3810,cpe:/a:vsftpd:vsftpd:2.0.1,vsftpd 2.0.1,5
+2985CF79292411EAA9F2000CB41A3810,cpe:/o:linux:linux_kernel:2.6,Linux Linux_kernel 2.6,5
+2985CF79292411EAA9F2000CB41A3810,cpe:/o:linux:linux_kernel:3,Linux Linux_kernel 3,5
+2985CF79292411EAA9F2000CB41DBE04,cpe:/o:linux:linux_kernel:3,Linux Linux_kernel 3,5
+2985CF79292411EAA9F2000CB4203558,cpe:/a:lighttpd:lighttpd:1.4.42,lighttpd 1.4.42,5
+2985CF79292411EAA9F2000CB4203558,cpe:/o:linux:linux_kernel:3.18,Linux Linux_kernel 3.18,5
+2985CF79292411EAA9F2000CB422DDC6,cpe:/a:lighttpd:lighttpd:1.4.42,lighttpd 1.4.42,5
+2985CF79292411EAA9F2000CB422DDC6,cpe:/o:linux:linux_kernel:3.18,Linux Linux_kernel 3.18,5
+2985CF79292411EAA9F2000CB4258C1A,cpe:/a:openbsd:openssh:7.9,OpenSSH 7.9 protocol 2.0,5
+2985CF79292411EAA9F2000CB4258C1A,cpe:/o:linux:linux_kernel:2.6,Linux Linux_kernel 2.6,5
+2985CF79292411EAA9F2000CB4280BE8,cpe:/a:openbsd:openssh:5.2,OpenSSH 5.2 protocol 2.0,5
+2985CF79292411EAA9F2000CB4280BE8,cpe:/a:vsftpd:vsftpd:2.0.1,vsftpd 2.0.1,5
+2985CF79292411EAA9F2000CB4280BE8,cpe:/o:linux:linux_kernel:2.6,Linux Linux_kernel 2.6,5
+2985CF79292411EAA9F2000CB42BE862,cpe:/a:openbsd:openssh:7.9,OpenSSH 7.9 protocol 2.0,5
+2985CF79292411EAA9F2000CB42BE862,cpe:/o:linux:linux_kernel:2.6,Linux Linux_kernel 2.6,5
+2985CF79292411EAA9F2000CB42FD760,cpe:/a:apache:coyote_http_connector:1.1,Apache Tomcat/Coyote JSP engine 1.1,5
+2985CF79292411EAA9F2000CB42FD760,cpe:/a:openbsd:openssh:5.2,OpenSSH 5.2 protocol 2.0,5
+2985CF79292411EAA9F2000CB42FD760,cpe:/a:vsftpd:vsftpd:2.0.1,vsftpd 2.0.1,5
+2985CF79292411EAA9F2000CB42FD760,cpe:/o:linux:linux_kernel:2.6,Linux Linux_kernel 2.6,5
+2985CF79292411EAA9F2000CB42FD760,cpe:/o:linux:linux_kernel:3,Linux Linux_kernel 3,5
+2985CF79292411EAA9F2000CB433960C,cpe:/a:apache:coyote_http_connector:1.1,Apache Tomcat/Coyote JSP engine 1.1,5
+2985CF79292411EAA9F2000CB433960C,cpe:/a:openbsd:openssh:5.2,OpenSSH 5.2 protocol 2.0,5
+2985CF79292411EAA9F2000CB433960C,cpe:/a:vsftpd:vsftpd:2.0.1,vsftpd 2.0.1,5
+2985CF79292411EAA9F2000CB433960C,cpe:/o:linux:linux_kernel:3,Linux Linux_kernel 3,5
+2985CF79292411EAA9F2000CB436ECF8,cpe:/a:openbsd:openssh:7.4,OpenSSH 7.4 protocol 2.0,5
+2985CF79292411EAA9F2000CB436ECF8,cpe:/o:linux:linux_kernel:3,Linux Linux_kernel 3,5
+2985CF79292411EAA9F2000CB43BE528,cpe:/a:openbsd:openssh:5.2,OpenSSH 5.2 protocol 2.0,5
+2985CF79292411EAA9F2000CB43BE528,cpe:/a:vsftpd:vsftpd:2.0.1,vsftpd 2.0.1,5
+2985CF79292411EAA9F2000CB43BE528,cpe:/o:linux:linux_kernel:2.6,Linux Linux_kernel 2.6,5
+2985CF79292411EAA9F2000CB43F57A8,cpe:/a:apache:http_server:2.4.6,Apache httpd 2.4.6 (CentOS) mod_auth_gssapi/1.5.1 mod_nss/1.0.14 NSS/3.28.4 PHP/5.4.16 mod_wsgi/3.4 Python/2.7.5,5
+2985CF79292411EAA9F2000CB43F57A8,cpe:/a:openbsd:openssh:7.4,OpenSSH 7.4 protocol 2.0,5
+2985CF79292411EAA9F2000CB43F57A8,cpe:/o:linux:linux_kernel:3,Linux Linux_kernel 3,5
+2985CF79292411EAA9F2000CB448E76E,cpe:/a:openbsd:openssh:7.4,OpenSSH 7.4 protocol 2.0,5
+2985CF79292411EAA9F2000CB448E76E,cpe:/o:linux:linux_kernel:3,Linux Linux_kernel 3,5
+2985CF79292411EAA9F2000CB44CC0DC,cpe:/a:openbsd:openssh:7.6p1,OpenSSH 7.6p1 Ubuntu 4ubuntu0.3 Ubuntu Linux; protocol 2.0,5
+2985CF79292411EAA9F2000CB44CC0DC,cpe:/o:linux:linux_kernel:3,Linux Linux_kernel 3,5
+2985CF79292411EAA9F2000CB451BBFA,cpe:/a:igor_sysoev:nginx:1.14.2,nginx 1.14.2,5
+2985CF79292411EAA9F2000CB451BBFA,cpe:/a:openbsd:openssh:7.9p1,OpenSSH 7.9p1 Debian 10+deb10u1 protocol 2.0,5
+2985CF79292411EAA9F2000CB451BBFA,cpe:/o:linux:linux_kernel:3,Linux Linux_kernel 3,5
+2985CF79292411EAA9F2000CB4556CD2,cpe:/a:lighttpd:lighttpd:1.4.42,lighttpd 1.4.42,5
+2985CF79292411EAA9F2000CB4556CD2,cpe:/o:linux:linux_kernel:3.18,Linux Linux_kernel 3.18,5
+2985CF79292411EAA9F2000CB4612176,cpe:/a:lighttpd:lighttpd:1.4.42,lighttpd 1.4.42,5
+2985CF79292411EAA9F2000CB4612176,cpe:/o:linux:linux_kernel:3.18,Linux Linux_kernel 3.18,5
+2985CF79292411EAA9F2000CB4647E2A,cpe:/a:openbsd:openssh:6.6.1,OpenSSH 6.6.1 protocol 2.0,5
+2985CF79292411EAA9F2000CB4647E2A,cpe:/o:linux:linux_kernel:3,Linux Linux_kernel 3,5
+2985CF79292411EAA9F2000CB475A15A,cpe:/a:apache:http_server,Apache httpd,5
+2985CF79292411EAA9F2000CB475A15A,cpe:/a:mysql:mysql:5.6.36-82.1-log,MySQL 5.6.36-82.1-log,5
+2985CF79292411EAA9F2000CB475A15A,cpe:/a:openbsd:openssh:6.7p1,OpenSSH 6.7p1 protocol 2.0,5
+2985CF79292411EAA9F2000CB475A15A,cpe:/o:linux:linux_kernel:3,Linux Linux_kernel 3,5
+2985CF79292411EAA9F2000CB47801A2,cpe:/o:vmware:esxi:5.5,Vmware Esxi 5.5,5
+2985CF79292411EAA9F2000CB47A142E,cpe:/a:apache:http_server,Apache httpd,5
+2985CF79292411EAA9F2000CB47A142E,cpe:/a:openbsd:openssh:6.7p1,OpenSSH 6.7p1 protocol 2.0,5
+2985CF79292411EAA9F2000CB47A142E,cpe:/o:linux:linux_kernel:3,Linux Linux_kernel 3,5
+2985CF79292411EAA9F2000CB47E157E,cpe:/a:openbsd:openssh:7.8,OpenSSH 7.8 protocol 2.0,5
+2985CF79292411EAA9F2000CB47E157E,cpe:/o:linux:linux_kernel:3,Linux Linux_kernel 3,5
+2985CF79292411EAA9F2000CB4808142,cpe:/a:openbsd:openssh:6.7p1,OpenSSH 6.7p1 protocol 2.0,5
+2985CF79292411EAA9F2000CB4808142,cpe:/o:linux:linux_kernel:3,Linux Linux_kernel 3,5
+2985CF79292411EAA9F2000CB482A3F0,cpe:/a:igor_sysoev:nginx:1.14.2,nginx 1.14.2,5
+2985CF79292411EAA9F2000CB482A3F0,cpe:/a:openbsd:openssh:7.9p1,OpenSSH 7.9p1 Debian 10+deb10u1 protocol 2.0,5
+2985CF79292411EAA9F2000CB482A3F0,cpe:/o:linux:linux_kernel:3,Linux Linux_kernel 3,5
+2985CF79292411EAA9F2000CB484F506,cpe:/a:apache:http_server,Apache httpd,5
+2985CF79292411EAA9F2000CB484F506,cpe:/a:openbsd:openssh:6.7p1,OpenSSH 6.7p1 protocol 2.0,5
+2985CF79292411EAA9F2000CB484F506,cpe:/o:linux:linux_kernel:3,Linux Linux_kernel 3,5
+2985CF79292411EAA9F2000CB48A6496,cpe:/a:openbsd:openssh:7.4,OpenSSH 7.4 protocol 2.0,5
+2985CF79292411EAA9F2000CB48A6496,cpe:/o:linux:linux_kernel:3,Linux Linux_kernel 3,5
+2985CF79292411EAA9F2000CB48E23C4,cpe:/a:openbsd:openssh:7.4,OpenSSH 7.4 protocol 2.0,5
+2985CF79292411EAA9F2000CB48E23C4,cpe:/o:linux:linux_kernel:3,Linux Linux_kernel 3,5
+2985CF79292411EAA9F2000CB4923B44,cpe:/a:apache:http_server:2.4.33,Apache httpd 2.4.33 (Unix) OpenSSL/1.0.2o PHP/7.2.6 mod_perl/2.0.8-dev Perl/v5.16.3,5
+2985CF79292411EAA9F2000CB4923B44,cpe:/a:mysql:mysql,MySQL blocked - too many connection errors,5
+2985CF79292411EAA9F2000CB4923B44,cpe:/a:openbsd:openssh:7.4,OpenSSH 7.4 protocol 2.0,5
+2985CF79292411EAA9F2000CB4923B44,cpe:/a:proftpd:proftpd:1.3.4c,ProFTPD 1.3.4c,5
+2985CF79292411EAA9F2000CB4923B44,cpe:/o:linux:linux_kernel:3,Linux Linux_kernel 3,5
+2985CF79292411EAA9F2000CB496828A,cpe:/a:openbsd:openssh:5.3,OpenSSH 5.3 protocol 2.0,5
+2985CF79292411EAA9F2000CB496828A,cpe:/o:linux:linux_kernel:2.6,Linux Linux_kernel 2.6,5
+2985CF79292411EAA9F2000CB499954C,cpe:/a:mongodb:mongodb:3.2.21,MongoDB 3.2.21 3.2.21,5
+2985CF79292411EAA9F2000CB499954C,cpe:/a:mysql:mysql,MySQL blocked - too many connection errors,5
+2985CF79292411EAA9F2000CB499954C,cpe:/a:openbsd:openssh:5.3,OpenSSH 5.3 protocol 2.0,5
+2985CF79292411EAA9F2000CB499954C,cpe:/o:linux:linux_kernel:2.6,Linux Linux_kernel 2.6,5
+2985CF79292411EAA9F2000CB49CE300,cpe:/o:vmware:esxi:5.5,Vmware Esxi 5.5,5
+2985CF79292411EAA9F2000CB4A16858,cpe:/a:openbsd:openssh:6.6.1,OpenSSH 6.6.1 protocol 2.0,5
+2985CF79292411EAA9F2000CB4A16858,cpe:/o:linux:linux_kernel:3,Linux Linux_kernel 3,5
+2985CF79292411EAA9F2000CB4A49DF2,cpe:/a:mongodb:mongodb:4.0.13,MongoDB 4.0.13,5
+2985CF79292411EAA9F2000CB4A49DF2,cpe:/a:openbsd:openssh:7.4,OpenSSH 7.4 protocol 2.0,5
+2985CF79292411EAA9F2000CB4A49DF2,cpe:/o:linux:linux_kernel:3,Linux Linux_kernel 3,5
+2985CF79292411EAA9F2000CB4AD8B06,cpe:/a:apache:coyote_http_connector:1.1,Apache Tomcat/Coyote JSP engine 1.1,5
+2985CF79292411EAA9F2000CB4AD8B06,cpe:/a:openbsd:openssh:5.3,OpenSSH 5.3 protocol 2.0,5
+2985CF79292411EAA9F2000CB4AD8B06,cpe:/o:linux:linux_kernel:2.6,Linux Linux_kernel 2.6,5
+2985CF79292411EAA9F2000CB4B1B212,cpe:/a:igor_sysoev:nginx,nginx,5
+2985CF79292411EAA9F2000CB4B1B212,cpe:/a:openbsd:openssh:5.3,OpenSSH 5.3 protocol 2.0,5
+2985CF79292411EAA9F2000CB4B1B212,cpe:/o:linux:linux_kernel:2.6,Linux Linux_kernel 2.6,5
+2985CF79292411EAA9F2000CB4B5C2BC,cpe:/a:apache:coyote_http_connector:1.1,Apache Tomcat/Coyote JSP engine 1.1,5
+2985CF79292411EAA9F2000CB4B5C2BC,cpe:/a:openbsd:openssh:5.2,OpenSSH 5.2 protocol 2.0,5
+2985CF79292411EAA9F2000CB4B5C2BC,cpe:/a:vsftpd:vsftpd:2.0.1,vsftpd 2.0.1,5
+2985CF79292411EAA9F2000CB4B5C2BC,cpe:/o:linux:linux_kernel:2.6,Linux Linux_kernel 2.6,5
+2985CF7929EF11EA941C000C0F500C62,cpe:/a:openbsd:openssh:5.2,OpenSSH 5.2 protocol 2.0,5
+2985CF7929EF11EA941C000C0F500C62,cpe:/a:vsftpd:vsftpd:2.0.1,vsftpd 2.0.1,5
+2985CF7929EF11EA941C000C0F500C62,cpe:/o:linux:linux_kernel:2.6.32,Linux Linux_kernel 2.6.32,5
+2985CF7929EF11EA941C000C0F94C6EA,cpe:/a:openbsd:openssh:6.7p1,OpenSSH 6.7p1 protocol 2.0,5
+2985CF7929EF11EA941C000C0F94C6EA,cpe:/o:linux:linux_kernel:3,Linux Linux_kernel 3,5
+2985CF792AB811EA941C000C9D4A8BCC,cpe:/o:microsoft:windows_vista,Microsoft Windows_vista,5
+2985CF792ABA11EA941C000C3002D770,cpe:/o:microsoft:windows_vista::sp1,Microsoft Windows_vista Sp1,5
+2985CF792ABA11EA941C000C3002D770,cpe:/o:microsoft:windows_vista::sp2,Microsoft Windows_vista Sp2,5
+2985CF792ABA11EA941C000C3024D712,cpe:/o:microsoft:windows_xp::sp2,Microsoft Windows_xp Sp2,5
+2985CF792ABA11EA941C000C304E0F6A,cpe:/a:mysql:mysql,MySQL unauthorized,5
+2985CF792ABA11EA941C000C304E0F6A,cpe:/a:openbsd:openssh:7.9,OpenSSH 7.9 protocol 2.0,5
+2985CF792ABA11EA941C000C304E0F6A,cpe:/o:apple:iphone_os:5.0.1,Apple Iphone_os 5.0.1,5
+2985CF792ABA11EA941C000C3055C912,cpe:/a:mysql:mysql,MySQL unauthorized,5
+2985CF792ABA11EA941C000C3055C912,cpe:/o:freebsd:freebsd:6.3,Freebsd Freebsd 6.3,5
+2985CF792ABA11EA941C000C3055C912,cpe:/o:microsoft:windows_xp::sp2,Microsoft Windows_xp Sp2,5
+2985CF792ABA11EA941C000C305B1CF0,cpe:/a:goahead:goahead_webserver,GoAhead WebServer,5
+2985CF792ABA11EA941C000C305B1CF0,cpe:/a:openbsd:openssh:3.4p1.rl,OpenSSH 3.4p1.RL Allied Telesis protocol 2.0,5
+2985CF792ABA11EA941C000C30622374,cpe:/a:apache:http_server,Apache httpd,5
+2985CF792ABA11EA941C000C30622374,cpe:/a:openbsd:openssh:6.7p1,OpenSSH 6.7p1 protocol 2.0,5
+2985CF792ABA11EA941C000C30622374,cpe:/o:linux:linux_kernel:3,Linux Linux_kernel 3,5
+2985CF792ABA11EA941C000C30652AD8,cpe:/a:apache:http_server,Apache httpd,5
+2985CF792ABA11EA941C000C30652AD8,cpe:/a:openbsd:openssh:6.7p1,OpenSSH 6.7p1 protocol 2.0,5
+2985CF792ABA11EA941C000C30652AD8,cpe:/o:linux:linux_kernel:3,Linux Linux_kernel 3,5
+2985CF792B6411EA941C000CA76962E8,cpe:/a:openbsd:openssh:6.6.1,OpenSSH 6.6.1 protocol 2.0,5
+2985CF792B6411EA941C000CA76962E8,cpe:/o:linux:linux_kernel:3,Linux Linux_kernel 3,5
+2985CF792B8411EA941C000C2D505172,cpe:/a:openbsd:openssh:8.0,OpenSSH 8.0 protocol 2.0,5
+2985CF792B8411EA941C000CCB37EC7E,cpe:/a:mysql:mysql:5.7.21,MySQL 5.7.21,5
+2985CF792B8411EA941C000CCB37EC7E,cpe:/a:openbsd:openssh:7.7,OpenSSH 7.7 protocol 2.0,5
+2985CF792B8411EA941C000CCB37EC7E,cpe:/o:apple:mac_os_x:10.4,Apple Mac_os_x 10.4,5
+2985CF792B8411EA941C000CCB3F525C,cpe:/a:mysql:mysql,MySQL unauthorized,5
+2985CF792B8411EA941C000CCB3F525C,cpe:/a:openbsd:openssh:7.7,OpenSSH 7.7 protocol 2.0,5
+2985CF792B8411EA941C000CCB3F525C,cpe:/o:apple:iphone_os:5.0.1,Apple Iphone_os 5.0.1,5
+2985CF792B8411EA941C000CCB5038C4,cpe:/a:apache:http_server,Apache httpd,5
+2985CF792B8411EA941C000CCB5038C4,cpe:/a:openbsd:openssh:6.7p1,OpenSSH 6.7p1 protocol 2.0,5
+2985CF792B8411EA941C000CCB5038C4,cpe:/o:linux:linux_kernel:3,Linux Linux_kernel 3,5
