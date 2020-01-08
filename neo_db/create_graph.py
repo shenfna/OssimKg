@@ -5,13 +5,13 @@ from Config import Conf
 class CqlCreator:
 
     @staticmethod
-    def create_node_sql(tx, node):
+    def create_node_cql(tx, node):
         orient_headers = node['orient_headers']
         node_type = node['node_type']
         node_attrs = node['node_attrs']
         cql = "MERGE (n:" + node_type + " {"
         for key, val in node_attrs.items():
-            cql = cql + key + ": $" + orient_headers[key] + ", "
+            cql = cql + orient_headers[key] + ": $" + key + ", "
         cql = cql[:-2] + "})"
         # value = ("%s = %s" % (key, val) for key, val in node_attrs.items())
         print(cql)
@@ -19,7 +19,7 @@ class CqlCreator:
         tx.run(cql, node_attrs)
 
     @staticmethod
-    def update_node_sql(tx, node, condition):
+    def update_node_cql(tx, node, condition):
         orient_headers = node['orient_headers']
         node_type = node['node_type']
         if node_type:
@@ -27,23 +27,34 @@ class CqlCreator:
         else:
             cql = "MATCH (n) WHERE"
         for key, val in condition.items():
-            cql = cql + "n." + orient_headers[key] + " ='" + str(val) + "' AND "
+            cql = cql + "n." + orient_headers[key] + " ="
+            if isinstance(val, str):
+                cql = cql + "'" + val + "' AND "
+            else:
+                cql = cql + str(val) + " AND "
         cql = cql[:-5]
         node_attrs = node['node_attrs']
         if node_attrs:
             cql = cql + " SET "
             for key, val in node_attrs.items():
-                cql = cql + "n." + orient_headers[key] + " ='" + str(val) + "' , "
+                cql = cql + "n." + orient_headers[key] + " ="
+                if isinstance(val, str):
+                    cql = cql + "'" + val + "' , "
+                else:
+                    cql = cql + str(val) + " , "
             cql = cql[:-3]
         cql = cql + " RETURN n"
-        print(cql)
+        # print(cql)
+        # print(node_attrs)
+        for key, val in condition.items():
+            node_attrs[key] = val
         results = tx.run(cql, node_attrs)
         # for result in results:
         #     print((result['n']).__dict__['_properties']['id'])
         return results
 
     @staticmethod
-    def create_relation_sql(tx, relation):
+    def create_relation_cql(tx, relation):
         orient_headers = relation['orient_headers']
         out_node = relation['out_node']
         in_node = relation['in_node']
@@ -69,10 +80,22 @@ class CqlCreator:
             cql = cql[:-2] + "})"
             cql = cql + " MERGE (o)-[:" + name + "]->(i)"
             print(cql)
-            attrsMerged = in_node_attrs.copy()
-            attrsMerged.update(out_node_attrs)
-            print(attrsMerged)
-            tx.run(cql, attrsMerged)
+            attrs_merged = in_node_attrs.copy()
+            attrs_merged.update(out_node_attrs)
+            print(attrs_merged)
+            tx.run(cql, attrs_merged)
+
+    # @classmethod
+    # def update_node_property_cql(cls, node, condition):
+    #     orient_headers = node['orient_headers']
+    #     node_type = node['node_type']
+    #     node_props = node['node_props']
+    #     cql = "MATCH (n"
+    #     if node_type:
+    #         cql = cql + ":" + node_type
+    #     cql = cql + " {"
+    #     for key, val in condition.items():
+    #         cql = cql + "n." + orient_headers[key]
 
 
 class Importer:
@@ -90,30 +113,43 @@ class Importer:
     def insert_node(self, nodes):
         with self.driver.session() as session:
             for node in nodes:
-                session.write_transaction(self.cql_creator.create_node_sql, node)
+                session.write_transaction(self.cql_creator.create_node_cql, node)
+
+    def pre_update_node(self, node, session, condition):
+        # print(node['node_type'])
+        node_none = {
+            'node_type': node['node_type'],
+            'node_attrs': {},
+            'orient_headers': node['orient_headers']
+        }
+        pre = session.read_transaction(self.cql_creator.update_node_cql, node_none, condition)
+        return pre
 
     def update_node(self, nodes):
         with self.driver.session() as session:
             for node in nodes:
-                # print(node['node_type'])
-                node_none = {
-                    'node_type': node['node_type'],
-                    'node_attrs': '',
-                    'orient_headers': node['orient_headers']
-                }
-                condition = node['condition']
-                result = session.read_transaction(self.cql_creator.update_node_sql, node_none, condition)
-                if len(list(result)) != 0:
-                    result = session.write_transaction(self.cql_creator.update_node_sql, node, condition)
-                    # print(len(list(result)))
-                else:
-                    # self.insert_node(node)
-                    session.write_transaction(self.cql_creator.create_node_sql, node)
+                if 'condition' in node.keys():
+                    condition = node['condition']
+                    pre = self.pre_update_node(node=node, session=session, condition=condition)
+                    if len(list(pre)) != 0:
+                        result = session.write_transaction(self.cql_creator.update_node_cql, node, node['condition'])
+                        # print(len(list(result)))
+                    else:
+                        session.write_transaction(self.cql_creator.create_node_cql, node)
+
+    def update_node_property(self, nodes):
+        with self.driver.session() as session:
+            for node in nodes:
+                if 'condition' in node.keys():
+                    condition = node['condition']
+                    pre = self.pre_update_node(node=node, session=session, condition=condition)
+                    if len(list(pre)) != 0:
+                        result = session.write_transaction(self.cql_creator.update_node_cql, node, condition)
 
     def insert_relation(self, relations):
         with self.driver.session() as session:
             for rel in relations:
-                session.write_transaction(self.cql_creator.create_relation_sql, rel)
+                session.write_transaction(self.cql_creator.create_relation_cql, rel)
 
 
 if __name__ == '__main__':
@@ -121,7 +157,7 @@ if __name__ == '__main__':
     in_node = {'node_type': 'Person', 'node_attrs': {'name': 'Alice', 'id': '1'}}
     out_node = {'node_type': 'Person', 'node_attrs': {'name': 'Mike', 'id': '2'}}
     relation = {'in_node': in_node, 'out_node': out_node, 'relation_name': 'KNOWS'}
-    cre.create_relation_sql(tx='', relation=relation)
+    cre.create_relation_cql(tx='', relation=relation)
     # it = Importer()
     # it.update_node_sql(node={'node_type': 'Host', 'node_attrs': {'hostname': 'alienvault'}},
     #                    conditions={'id': '3B3E81B95A9211E99A5D9088F9497FA1'})

@@ -15,9 +15,12 @@ class Input:
                 if pd.isna(row[head]):
                     continue
                 attrs[head] = row[head]
-            data['node_attrs'] = attrs
-            data['orient_headers'] = orient_headers
-            datas.append(data)
+            if attrs:
+                data['node_attrs'] = attrs
+                data['orient_headers'] = orient_headers
+                datas.append(data)
+        for data in datas:
+            print(data)
         return datas
 
     @classmethod
@@ -46,11 +49,12 @@ class Input:
                     continue
                 in_attrs[head] = row[head]
             in_node['node_attrs'] = in_attrs
-            data['out_node'] = out_node
-            data['in_node'] = in_node
-            data['relation_name'] = relation_name
-            data['orient_headers'] = orient_headers
-            datas.append(data)
+            if in_attrs and out_attrs:
+                data['out_node'] = out_node
+                data['in_node'] = in_node
+                data['relation_name'] = relation_name
+                data['orient_headers'] = orient_headers
+                datas.append(data)
         for data in datas:
             print(data)
         return datas
@@ -61,8 +65,10 @@ if __name__ == '__main__':
     # datas = it.csv_to_node_data(['id', 'name', 'descr', 'owner'], "host", '../raw_data/map_host_group.csv')
     # for data in datas:
     #     print(data)
-    datas = it.csv_to_relation_data(out_node_data={'type': 'Host', 'headers': ['host_id']},
-                                    in_node_data={'type': 'HostGroup', 'headers': ['host_group_id']},
-                                    relation_name='hasGroup', path='../raw_data/map_host_group_ref.csv')
+    # datas = it.csv_to_relation_data(out_node_data={'type': 'Host', 'headers': ['host_id']},
+    #                                 in_node_data={'type': 'HostGroup', 'headers': ['host_group_id']},
+    #                                 relation_name='hasGroup', path='../raw_data/map_host_group_ref.csv')
+    datas = it.csv_to_node_data(headers=['descr'], orient_headers={'descr': 'descr'},
+                                node_type='Host', path='../raw_data/map_host.csv')
     for data in datas:
         print(data)
