@@ -90,7 +90,7 @@ class Action:
                                                       orient_headers=host_os_ori_heads,
                                                       path=get_file_name(file='raw_data/map_host_os.csv'))
         # 插入Host和OS的边
-        self.importer.insert_relation(host_os_ref)
+        self.importer.update_relation(host_os_ref)
 
         out_node_data.clear()
         in_node_data.clear()
@@ -105,7 +105,7 @@ class Action:
                                                         orient_headers=host_os_ori_heads,
                                                         path=get_file_name(file='raw_data/map_host_os.csv'))
     #   插入OS和Source的边
-        self.importer.insert_relation(os_source_ref)
+        self.importer.update_relation(os_source_ref)
 
     def update_host_source(self):
         # id,name
@@ -140,15 +140,15 @@ class Action:
 
     def update_host_service(self):
         # host_ip,port,service,version
-        host_service_headers = ['host_ip', 'port', 'service', 'version']
-        host_service_ori_heads = {'host_ip': 'ip', 'port': 'port', 'service': 'name', 'version': 'version'}
+        host_service_headers = ['port', 'service', 'version']
+        host_service_ori_heads = {'port': 'port', 'service': 'name', 'version': 'version'}
         host_service = self.input.csv_to_node_data(headers=host_service_headers, orient_headers=host_service_ori_heads,
                                                    node_type='Service',
                                                    path=get_file_name(file='raw_data/map_host_service.csv'))
         for service in host_service:
             condition = dict()
             keys = service['node_attrs'].keys()
-            if ('service' in keys) or ('version' in keys):
+            if ('service' in keys) or ('version' in keys) or ('port' in keys):
                 if 'service' in keys:
                     condition['service'] = service['node_attrs']['service']
                 else:
@@ -157,6 +157,10 @@ class Action:
                     condition['version'] = service['node_attrs']['version']
                 else:
                     condition['version'] = ''
+                if 'port' in keys:
+                    condition['port'] = service['node_attrs']['port']
+                else:
+                    condition['port'] = ''
                 service['condition'] = condition
         # 插入Service节点
         self.importer.update_node(nodes=host_service)
@@ -166,30 +170,106 @@ class Action:
         out_node_data['headers'] = ['host_id']
         out_node_data['type'] = 'Host'
         in_node_data = dict()
-        in_node_data['headers'] = ['service', 'version']
+        in_node_data['headers'] = ['service', 'version', 'port']
         in_node_data['type'] = 'Service'
-        host_service_ori_heads = {'host_id': 'id', 'service': 'name', 'version': 'version'}
+        host_service_ori_heads = {'host_id': 'id', 'service': 'name', 'version': 'version', 'port': 'port'}
         host_service_ref = self.input.csv_to_relation_data(out_node_data=out_node_data, in_node_data=in_node_data,
                                                            relation_name='hasAsset',
                                                            orient_headers=host_service_ori_heads,
                                                            path=get_file_name(file='raw_data/map_host_service.csv'))
         # 插入Host和Service的边
         self.importer.insert_relation(host_service_ref)
-        #
-        # out_node_data.clear()
-        # in_node_data.clear()
-        # host_service_ori_heads.clear()
-        # out_node_data['headers'] = ['service', 'version']
-        # out_node_data['type'] = 'Service'
-        # in_node_data['headers'] = ['source_id']
-        # in_node_data['type'] = 'Source'
-        # host_service_ori_heads = {'service': 'name', 'version': 'version', 'source_id': 'id'}
-        # os_source_ref = self.input.csv_to_relation_data(out_node_data=out_node_data, in_node_data=in_node_data,
-        #                                                 relation_name='foundBy',
-        #                                                 orient_headers=host_service_ori_heads,
-        #                                                 path=get_file_name(file='raw_data/map_host_service.csv'))
-        # #   插入Service和Source的边
-        # self.importer.insert_relation(os_source_ref)
+
+        out_node_data.clear()
+        in_node_data.clear()
+        host_service_ori_heads.clear()
+        out_node_data['headers'] = ['service', 'version', 'port']
+        out_node_data['type'] = 'Service'
+        in_node_data['headers'] = ['source_id']
+        in_node_data['type'] = 'Source'
+        host_service_ori_heads = {'service': 'name', 'version': 'version', 'source_id': 'id', 'port': 'port'}
+        service_source_ref = self.input.csv_to_relation_data(out_node_data=out_node_data, in_node_data=in_node_data,
+                                                             relation_name='foundBy',
+                                                             orient_headers=host_service_ori_heads,
+                                                             path=get_file_name(file='raw_data/map_host_service.csv'))
+        #   插入Service和Source的边
+        self.importer.update_relation(service_source_ref)
+
+    def update_host_software(self):
+        # cpe,banner
+        host_software_headers = ['cpe', 'banner']
+        host_software_ori_heads = {'cpe': 'cpe', 'banner': 'name'}
+        host_software = self.input.csv_to_node_data(headers=host_software_headers,
+                                                    orient_headers=host_software_ori_heads,
+                                                    node_type='Software',
+                                                    path=get_file_name(file='raw_data/map_host_software.csv'))
+        for software in host_software:
+            condition = dict()
+            keys = software['node_attrs'].keys()
+            if 'cpe' in keys:
+                condition['cpe'] = software['node_attrs']['cpe']
+                software['condition'] = condition
+        # 插入Software节点
+        self.importer.update_node(nodes=host_software)
+
+        # host_id,cpe
+        out_node_data = dict()
+        out_node_data['headers'] = ['host_id']
+        out_node_data['type'] = 'Host'
+        in_node_data = dict()
+        in_node_data['headers'] = ['cpe']
+        in_node_data['type'] = 'Software'
+        host_software_ori_heads = {'host_id': 'id', 'cpe': 'cpe'}
+        host_software_ref = self.input.csv_to_relation_data(out_node_data=out_node_data, in_node_data=in_node_data,
+                                                            relation_name='hasAsset',
+                                                            orient_headers=host_software_ori_heads,
+                                                            path=get_file_name(file='raw_data/map_host_software.csv'))
+        # 插入Host和Software的边
+        self.importer.insert_relation(host_software_ref)
+
+        out_node_data.clear()
+        in_node_data.clear()
+        host_software_ori_heads.clear()
+        out_node_data['headers'] = ['cpe']
+        out_node_data['type'] = 'Software'
+        in_node_data['headers'] = ['source_id']
+        in_node_data['type'] = 'Source'
+        host_software_ori_heads = {'cpe': 'cpe', 'source_id': 'id'}
+        software_source_ref = self.input.csv_to_relation_data(out_node_data=out_node_data, in_node_data=in_node_data,
+                                                              relation_name='foundBy',
+                                                              orient_headers=host_software_ori_heads,
+                                                              path=get_file_name(file='raw_data/map_host_software.csv'))
+        #   插入Service和Source的边
+        self.importer.update_relation(software_source_ref)
+
+    def update_host_type(self):
+        # host_id,name
+        host_type_mapping = self.mappings['MAP_HOST_TYPE']
+        host_type_headers = host_type_mapping['columns']
+        host_type_ori_heads = {'host_id': 'id', 'name': 'type'}
+        host_type = self.input.csv_to_node_data(headers=host_type_headers, orient_headers=host_type_ori_heads,
+                                                node_type='Host', path=get_file_name(file='raw_data/map_host_type.csv'))
+        for host in host_type:
+            condition = dict()
+            if 'host_id' in host['node_attrs'].keys():
+                condition['host_id'] = host['node_attrs']['host_id']
+                host['condition'] = condition
+        self.importer.update_node_property(host_type)
+
+    def update_host_subtype(self):
+        # host_id,name
+        host_subtype_mapping = self.mappings['MAP_HOST_SUBTYPE']
+        host_subtype_headers = host_subtype_mapping['columns']
+        host_subtype_ori_heads = {'host_id': 'id', 'name': 'subtype'}
+        host_subtype = self.input.csv_to_node_data(headers=host_subtype_headers, orient_headers=host_subtype_ori_heads,
+                                                   node_type='Host',
+                                                   path=get_file_name(file='raw_data/map_host_subtype.csv'))
+        for host in host_subtype:
+            condition = dict()
+            if 'host_id' in host['node_attrs'].keys():
+                condition['host_id'] = host['node_attrs']['host_id']
+                host['condition'] = condition
+        self.importer.update_node_property(host_subtype)
 
     def main(self):
         self.update_host()
@@ -198,7 +278,10 @@ class Action:
         self.update_host_source()
         self.update_host_os()
         self.update_host_ip()
-        # self.update_host_service()
+        self.update_host_service()
+        self.update_host_software()
+        self.update_host_type()
+        self.update_host_subtype()
 
 
 if __name__ == '__main__':
