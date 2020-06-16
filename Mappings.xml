@@ -93,18 +93,21 @@
             <column>alarmId</column>
             <column>timestamp</column>
             <column>status</column>
-            <column>pluginId</column>
-            <column>pluginSId</column>
-            <column>srcIP</column>
-            <column>dstIP</column>
-            <column>srcPort</column>
-            <column>dstPort</column>
+            <column>alarmName</column>
+            <column>alarmType</column>
+            <column>attackerIP</column>
+            <column>victimIP</column>
+            <column>attackerPort</column>
+            <column>victimPort</column>
             <column>risk</column>
             <column>stats</column>
         </columns>
-        <source>select hex(backlog_id) as alarmId, timestamp, status, plugin_id as pluginId,
-            plugin_sid as pluginSId, inet6_ntoa(src_ip) as srcIP, inet6_ntoa(dst_ip) as dstIP,
-            src_port as srcPort, dst_port as dstPort, risk, stats from alarm order by timestamp desc limit 1000;
+        <source>select hex(backlog_id) as alarmId, timestamp, status, alarmName, alarmType, inet6_ntoa(src_ip) as
+            attackerIP, inet6_ntoa(dst_ip) as victimIP, src_port as attackerPort, dst_port as victimPort, risk, stats
+            from alarm left join (select plugin_id, sid, plugin_sid.name as alarmName, subcategory.name as alarmType
+            from alienvault.plugin_sid left join alienvault.subcategory on plugin_sid.subcategory_id = subcategory.id
+            and plugin_sid.category_id = subcategory.cat_id) t on alarm.plugin_id = t.plugin_id and alarm.plugin_sid =
+            alarm.plugin_sid order by timestamp desc limit 1000;
         </source>
     </mapping>
     <mapping>
