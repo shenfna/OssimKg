@@ -4,7 +4,7 @@ import pandas as pd
 class Input:
 
     @classmethod
-    def csv_to_node_data(cls, headers, orient_headers, node_type, path):
+    def csv_to_node_data(cls, headers, node_type, path):
         datas = []
         df = pd.read_csv(path)
         for index, row in df.iterrows():
@@ -17,17 +17,16 @@ class Input:
                 attrs[head] = row[head]
             if attrs:
                 data['node_attrs'] = attrs
-                data['orient_headers'] = orient_headers
                 datas.append(data)
         for data in datas:
             print(data)
         return datas
 
     @classmethod
-    def csv_to_relation_data(cls, out_node_data, in_node_data, orient_headers, relation_name, path):
+    def csv_to_relation_data(cls, out_node_data, in_node_data, relation_name, relation_pro, path):
         datas = []
         out_headers = out_node_data['headers']
-        in_heasers = in_node_data['headers']
+        in_headers = in_node_data['headers']
         out_type = out_node_data['type']
         in_type = in_node_data['type']
         df = pd.read_csv(path)
@@ -44,16 +43,22 @@ class Input:
             in_node = dict()
             in_node['node_type'] = in_type
             in_attrs = dict()
-            for head in in_heasers:
+            for head in in_headers:
                 if pd.isna(row[head]):
                     continue
                 in_attrs[head] = row[head]
             in_node['node_attrs'] = in_attrs
+            relation_attrs = dict()
+            if relation_pro:
+                for pro in relation_pro:
+                    if pd.isna(row[pro]):
+                        continue
+                    relation_attrs[pro] = row[pro]
             if in_attrs and out_attrs:
                 data['out_node'] = out_node
                 data['in_node'] = in_node
                 data['relation_name'] = relation_name
-                data['orient_headers'] = orient_headers
+                data['relation_attrs'] = relation_attrs
                 datas.append(data)
         for data in datas:
             print(data)
@@ -65,10 +70,8 @@ if __name__ == '__main__':
     # datas = it.csv_to_node_data(['id', 'name', 'descr', 'owner'], "host", '../raw_data/map_host_group.csv')
     # for data in datas:
     #     print(data)
-    # datas = it.csv_to_relation_data(out_node_data={'type': 'Host', 'headers': ['host_id']},
-    #                                 in_node_data={'type': 'HostGroup', 'headers': ['host_group_id']},
-    #                                 relation_name='hasGroup', path='../raw_data/map_host_group_ref.csv')
-    datas = it.csv_to_node_data(headers=['descr'], orient_headers={'descr': 'descr'},
-                                node_type='Host', path='../raw_data/map_host.csv')
-    for data in datas:
-        print(data)
+    datas = it.csv_to_relation_data(out_node_data={'type': 'Attacker', 'headers': ['attackerIP','attackerPort']},
+                                    in_node_data={'type': 'Victim', 'headers': ['victimIP','victimPort']},
+                                    relation_name='attacker', path='../raw_data/map_event.csv',relation_pro=[])
+    # datas = it.csv_to_node_data(headers=['hostId','name','asset','descr','created','updated'],
+    #                             node_type='Host', path='../raw_data/map_host.csv')

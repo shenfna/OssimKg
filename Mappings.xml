@@ -3,94 +3,143 @@
     <mapping>
         <name>MAP_HOST</name>
         <columns>
-            <column>id</column>
-            <column>hostname</column>
+            <column>hostId</column>
+            <column>name</column>
             <column>asset</column>
             <column>descr</column>
             <column>created</column>
             <column>updated</column>
+            <column>hostType</column>
+            <column>hostSubType</column>
         </columns>
-        <source>select hex(id) as id, hostname, asset, descr, created, updated from host;</source>
+        <source>select hex(id) as hostId, hostname as name, asset, descr, created, updated, hostType, hostSubType from
+            host left join (select host_id, t.name as hostType, s.name as hostSubType from host_types left join
+            device_types as t on host_types.type=t.id left join device_types as s on host_types.subtype=s.id) tp on
+            host.id = tp.host_id;
+        </source>
     </mapping>
     <mapping>
         <name>MAP_HOST_GROUP</name>
         <columns>
-            <column>id</column>
+            <column>hostGroupId</column>
             <column>name</column>
             <column>descr</column>
             <column>owner</column>
         </columns>
-        <source>select hex(id) as id, name, descr, owner from host_group;</source>
+        <source>select hex(id) as hostGroupId, name, descr, owner from host_group;</source>
     </mapping>
     <mapping>
         <name>MAP_HOST_GROUP_REF</name>
         <columns>
-            <column>host_group_id</column>
-            <column>host_id</column>
+            <column>hostGroupId</column>
+            <column>hostId</column>
         </columns>
-        <source>select hex(host_group_id) as host_group_id, hex(host_id) as host_id from host_group_reference;</source>
+        <source>select hex(host_group_id) as hostGroupId, hex(host_id) as hostId from host_group_reference;</source>
     </mapping>
     <mapping>
         <name>MAP_HOST_IP</name>
         <columns>
-            <column>host_id</column>
+            <column>hostId</column>
             <column>ip</column>
         </columns>
-        <source>select hex(host_id) as host_id, inet6_ntoa(ip) as ip from host_ip;</source>
+        <source>select hex(host_id) as hostId, inet6_ntoa(ip) as ip from host_ip;</source>
     </mapping>
     <mapping>
         <name>MAP_HOST_OS</name>
         <columns>
-            <column>host_id</column>
-            <column>value</column>
-            <column>source_id</column>
+            <column>hostId</column>
+            <column>name</column>
+            <column>sourceId</column>
         </columns>
-        <source>select hex(host_id) as host_id, value, source_id  from host_properties where property_ref=3;</source>
+        <source>select hex(host_id) as hostId, value as name, source_id as sourceId from host_properties where
+            property_ref=3;
+        </source>
     </mapping>
     <mapping>
         <name>MAP_HOST_SERVICE</name>
         <columns>
-            <column>host_id</column>
-            <column>host_ip</column>
+            <column>hostId</column>
+            <column>ip</column>
             <column>port</column>
-            <column>service</column>
+            <column>name</column>
             <column>version</column>
-            <column>source_id</column>
+            <column>sourceId</column>
         </columns>
-        <source>select hex(host_id) as host_id, inet6_ntoa(host_ip) as host_ip, port, service, version,source_id from host_services;</source>
+        <source>select hex(host_id) as hostId, inet6_ntoa(host_ip) as ip, port, service as name, version, source_id as
+            sourceId from host_services;
+        </source>
     </mapping>
     <mapping>
         <name>MAP_HOST_SOURCE</name>
         <columns>
-            <column>id</column>
+            <column>sourceId</column>
             <column>name</column>
         </columns>
-        <source>select id, name from host_source_reference;</source>
-    </mapping>
-    <mapping>
-        <name>MAP_HOST_TYPE</name>
-        <columns>
-            <column>host_id</column>
-            <column>name</column>
-        </columns>
-        <source>select hex(host_id) as host_id, name from host_types left join device_types on host_types.type=device_types.id;</source>
-    </mapping>
-    <mapping>
-        <name>MAP_HOST_SUBTYPE</name>
-        <columns>
-            <column>host_id</column>
-            <column>name</column>
-        </columns>
-        <source>select hex(host_id) as host_id, name from host_types left join device_types on host_types.subtype=device_types.id;</source>
+        <source>select id as sourceId, name from host_source_reference;</source>
     </mapping>
     <mapping>
         <name>MAP_HOST_SOFTWARE</name>
         <columns>
-            <column>host_id</column>
+            <column>hostId</column>
             <column>cpe</column>
-            <column>banner</column>
-            <column>source_id</column>
+            <column>name</column>
+            <column>sourceId</column>
         </columns>
-        <source>select hex(host_id) as host_id, cpe, banner, source_id from host_software;</source>
+        <source>select hex(host_id) as hostId, cpe, banner as name, source_id as sourceId from host_software;</source>
+    </mapping>
+    <mapping>
+        <name>MAP_ALARM</name>
+        <columns>
+            <column>alarmId</column>
+            <column>timestamp</column>
+            <column>status</column>
+            <column>pluginId</column>
+            <column>pluginSId</column>
+            <column>srcIP</column>
+            <column>dstIP</column>
+            <column>srcPort</column>
+            <column>dstPort</column>
+            <column>risk</column>
+            <column>stats</column>
+        </columns>
+        <source>select hex(backlog_id) as alarmId, timestamp, status, plugin_id as pluginId,
+            plugin_sid as pluginSId, inet6_ntoa(src_ip) as srcIP, inet6_ntoa(dst_ip) as dstIP,
+            src_port as srcPort, dst_port as dstPort, risk, stats from alarm order by timestamp desc limit 1000;
+        </source>
+    </mapping>
+    <mapping>
+        <name>MAP_EVENT</name>
+        <columns>
+            <column>timestamp</column>
+            <column>attackerIP</column>
+            <column>victimIP</column>
+            <column>attackerPort</column>
+            <column>victimPort</column>
+            <column>attackerAsset</column>
+            <column>victimAsset</column>
+            <column>eventName</column>
+            <column>eventType</column>
+            <column>attackerName</column>
+            <column>victimName</column>
+            <column>attackerMac</column>
+            <column>victimMac</column>
+            <column>attackerHost</column>
+            <column>victimHost</column>
+            <column>attackerNet</column>
+            <column>victimNet</column>
+        </columns>
+        <source>
+            select timestamp, inet6_ntoa(ip_src) as attackerIP, inet6_ntoa(ip_dst) as victimIP, layer4_sport as
+            attackerPort,
+            layer4_dport as victimPort, ossim_asset_src as attackerAsset, ossim_asset_dst as victimAsset, t.eventName,
+            t.eventType, src_hostname as attackerName, dst_hostname as victimName, hex(src_mac) as attackerMac,
+            hex(dst_mac) as victimMac, hex(src_host) as attackerHost, hex(dst_host) as victimHost, hex(src_net) as
+            attackerNet,
+            hex(dst_net) as victimNet from alienvault_siem.acid_event left join (select plugin_id, sid, plugin_sid.name
+            as
+            eventName, subcategory.name as eventType from alienvault.plugin_sid left join subcategory on
+            plugin_sid.subcategory_id = subcategory.id and plugin_sid.category_id = subcategory.cat_id) t on
+            acid_event.plugin_id = t.plugin_id and acid_event.plugin_sid = t.sid limit 1000;
+        </source>
     </mapping>
 </mappings>
