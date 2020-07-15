@@ -174,15 +174,15 @@ class Action:
         #   插入Service和Source的边
         self.importer.update_relation(software_source_ref)
 
-    def update_alarm(self):
-        alarm = self.input.csv_to_node_data(headers=['alarmId', 'timestamp', 'status', 'alarmName',
+    def create_alarm(self):
+        alarm = self.input.csv_to_node_data(headers=['alarmId', 'status', 'alarmName',
                                                      'alarmType', 'risk', 'stats'], node_type='Alarm',
                                             path=get_file_name(file='raw_data/map_alarm.csv'))
         primary_keys = ['alarmId']
         # 插入Alarm节点
         self.importer.update_node(nodes=alarm, primary_keys=primary_keys)
 
-        alarm_attacker_headers = ['attackerIP', 'attackerPort']
+        alarm_attacker_headers = ['attackerIP']
         out_node_data = dict()
         out_node_data['headers'] = alarm_attacker_headers
         out_node_data['type'] = 'Attacker'
@@ -192,11 +192,11 @@ class Action:
         attacker_alarm_ref = self.input.csv_to_relation_data(out_node_data=out_node_data, in_node_data=in_node_data,
                                                              relation_name='cause',
                                                              path=get_file_name(file='raw_data/map_alarm.csv'),
-                                                             relation_pro=[])
+                                                             relation_pro=['timestamp'])
         # 插入Attacker和Alarm之间的边
-        self.importer.update_relation(attacker_alarm_ref)
+        self.importer.create_relation(attacker_alarm_ref)
 
-        alarm_victim_headers = ['victimIP', 'victimPort']
+        alarm_victim_headers = ['victimIP']
         out_node_data['headers'] = ['alarmId']
         out_node_data['type'] = 'Alarm'
         in_node_data['headers'] = alarm_victim_headers
@@ -204,16 +204,16 @@ class Action:
         alarm_victim_ref = self.input.csv_to_relation_data(out_node_data=out_node_data, in_node_data=in_node_data,
                                                            relation_name='target',
                                                            path=get_file_name(file='raw_data/map_alarm.csv'),
-                                                           relation_pro=[])
+                                                           relation_pro=['timestamp'])
         # 插入Alarm和Victim之间的边
-        self.importer.update_relation(alarm_victim_ref)
+        self.importer.create_relation(alarm_victim_ref)
 
-    def update_event(self):
+    def create_event(self):
         event_attacker_headers = ['attackerIP', 'attackerPort', 'attackerAsset', 'attackerName', 'attackerMac',
                                   'attackerHost', 'attackerNet']
         event_attacker = self.input.csv_to_node_data(headers=event_attacker_headers, node_type='Attacker',
                                                      path=get_file_name(file='raw_data/map_event.csv'))
-        primary_keys = ['attackerIP', 'attackerPort']
+        primary_keys = ['attackerIP']
         # 插入Attacker
         self.importer.update_node(event_attacker, primary_keys)
 
@@ -221,24 +221,24 @@ class Action:
                                 'victimNet']
         event_victim = self.input.csv_to_node_data(headers=event_victim_headers, node_type='Victim',
                                                    path=get_file_name(file='raw_data/map_event.csv'))
-        primary_keys = ['victimIP', 'victimPort']
+        primary_keys = ['victimIP']
         # 插入Victim
         self.importer.update_node(event_victim, primary_keys)
 
         out_node_data = dict()
-        out_node_data['headers'] = ['attackerIP', 'attackerPort']
+        out_node_data['headers'] = ['attackerIP']
         out_node_data['type'] = 'Attacker'
         in_node_data = dict()
-        in_node_data['headers'] = ['victimIP', 'victimPort']
+        in_node_data['headers'] = ['victimIP']
         in_node_data['type'] = 'Victim'
         attacker_victim_ref = self.input.csv_to_relation_data(out_node_data=out_node_data, in_node_data=in_node_data,
                                                               relation_name='attack',
                                                               path=get_file_name(file='raw_data/map_event.csv'),
                                                               relation_pro=['timestamp', 'eventName', 'eventType'])
         # 插入Attacker和Victim的边
-        self.importer.update_relation(attacker_victim_ref)
+        self.importer.create_relation(attacker_victim_ref)
 
-        alias = [{},{},{}]
+        alias = [{}, {}, {}]
         out_node_data['headers'] = ['attackerHost']
         out_node_data['type'] = 'Attacker'
         in_node_data['headers'] = ['attackerHost']
@@ -268,16 +268,16 @@ class Action:
         self.importer.update_relation(victim_host_ref)
 
     def main(self):
-        # self.update_host()
-        # self.update_host_group()
-        # self.update_host_group_ref()
-        # self.update_host_source()
-        # self.update_host_os()
-        # self.update_host_ip()
-        # self.update_host_service()
-        # self.update_host_software()
-        self.update_event()
-        # self.update_alarm()
+        self.update_host()
+        self.update_host_group()
+        self.update_host_group_ref()
+        self.update_host_source()
+        self.update_host_os()
+        self.update_host_ip()
+        self.update_host_service()
+        self.update_host_software()
+        self.create_event()
+        self.create_alarm()
 
 
 # self.update_alarm()

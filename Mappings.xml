@@ -103,11 +103,13 @@
             <column>stats</column>
         </columns>
         <source>select hex(backlog_id) as alarmId, timestamp, status, alarmName, alarmType, inet6_ntoa(src_ip) as
-            attackerIP, inet6_ntoa(dst_ip) as victimIP, src_port as attackerPort, dst_port as victimPort, risk, stats
+            attackerIP, inet6_ntoa(dst_ip) as victimIP, src_port as attackerPort, dst_port as victimPort, risk, stats,
+            alarm.plugin_id as pluginId
             from alarm left join (select plugin_id, sid, plugin_sid.name as alarmName, subcategory.name as alarmType
             from alienvault.plugin_sid left join alienvault.subcategory on plugin_sid.subcategory_id = subcategory.id
             and plugin_sid.category_id = subcategory.cat_id) t on alarm.plugin_id = t.plugin_id and alarm.plugin_sid =
-            alarm.plugin_sid order by timestamp desc limit 1000;
+            alarm.plugin_sid having attackerIP != victimIP and
+            pluginId != 8007 order by timestamp desc limit 1000;
         </source>
     </mapping>
     <mapping>
@@ -138,11 +140,13 @@
             t.eventType, src_hostname as attackerName, dst_hostname as victimName, hex(src_mac) as attackerMac,
             hex(dst_mac) as victimMac, hex(src_host) as attackerHost, hex(dst_host) as victimHost, hex(src_net) as
             attackerNet,
-            hex(dst_net) as victimNet from alienvault_siem.acid_event left join (select plugin_id, sid, plugin_sid.name
+            hex(dst_net) as victimNet, acid_event.plugin_id as pluginId from alienvault_siem.acid_event left join
+            (select plugin_id, sid, plugin_sid.name
             as
             eventName, subcategory.name as eventType from alienvault.plugin_sid left join subcategory on
             plugin_sid.subcategory_id = subcategory.id and plugin_sid.category_id = subcategory.cat_id) t on
-            acid_event.plugin_id = t.plugin_id and acid_event.plugin_sid = t.sid limit 1000;
+            acid_event.plugin_id = t.plugin_id and acid_event.plugin_sid = t.sid having attackerIP != victimIP and
+            pluginId != 8007 limit 1000;
         </source>
     </mapping>
 </mappings>
