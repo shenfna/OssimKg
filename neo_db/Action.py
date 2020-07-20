@@ -210,7 +210,7 @@ class Action:
 
     def create_event(self):
         event_attacker_headers = ['attackerIP', 'attackerPort', 'attackerAsset', 'attackerName', 'attackerMac',
-                                  'attackerHost', 'attackerNet']
+                                  'attackerHost', 'attackerNet', 'attackerHost']
         event_attacker = self.input.csv_to_node_data(headers=event_attacker_headers, node_type='Attacker',
                                                      path=get_file_name(file='raw_data/map_event.csv'))
         primary_keys = ['attackerIP']
@@ -218,7 +218,7 @@ class Action:
         self.importer.update_node(event_attacker, primary_keys)
 
         event_victim_headers = ['victimIP', 'victimPort', 'victimAsset', 'victimName', 'victimMac', 'victimHost',
-                                'victimNet']
+                                'victimNet', 'victimHost']
         event_victim = self.input.csv_to_node_data(headers=event_victim_headers, node_type='Victim',
                                                    path=get_file_name(file='raw_data/map_event.csv'))
         primary_keys = ['victimIP']
@@ -234,7 +234,8 @@ class Action:
         attacker_victim_ref = self.input.csv_to_relation_data(out_node_data=out_node_data, in_node_data=in_node_data,
                                                               relation_name='attack',
                                                               path=get_file_name(file='raw_data/map_event.csv'),
-                                                              relation_pro=['timestamp', 'eventName', 'eventType'])
+                                                              relation_pro=['timestamp', 'eventName', 'eventType',
+                                                                            'priority'])
         # 插入Attacker和Victim的边
         self.importer.create_relation(attacker_victim_ref)
 

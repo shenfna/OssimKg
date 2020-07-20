@@ -131,6 +131,7 @@
             <column>attackerHost</column>
             <column>victimHost</column>
             <column>attackerNet</column>
+            <column>priority</column>
             <column>victimNet</column>
         </columns>
         <source>
@@ -140,7 +141,8 @@
             t.eventType, src_hostname as attackerName, dst_hostname as victimName, hex(src_mac) as attackerMac,
             hex(dst_mac) as victimMac, hex(src_host) as attackerHost, hex(dst_host) as victimHost, hex(src_net) as
             attackerNet,
-            hex(dst_net) as victimNet, acid_event.plugin_id as pluginId from alienvault_siem.acid_event left join
+            hex(dst_net) as victimNet, ossim_priority as priority, acid_event.plugin_id as pluginId from
+            alienvault_siem.acid_event left join
             (select plugin_id, sid, plugin_sid.name
             as
             eventName, subcategory.name as eventType from alienvault.plugin_sid left join subcategory on
